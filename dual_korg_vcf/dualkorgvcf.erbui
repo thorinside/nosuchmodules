@@ -1,0 +1,173 @@
+// dualkorgvcf.erbui
+
+module dualkorgvcf {
+   board daisy_micropatch
+   width 10hp
+   material aluminum black
+   header { label "Dual Morg" }
+   footer { label "NSD" }
+
+   //--- LEDs ----------------------------------------------------------------
+
+   control led Led {
+      position 24.75mm, 20.1239mm
+      style red
+      pin L
+   }
+
+   //--- Pots ----------------------------------------------------------------
+
+   control pot1 Pot {
+      position 10.5mm, 23.752mm
+      style rogan, 1ps
+      label "CV_1"
+      pin CI1
+      faust { bind { address "/dualkorgvcf/freq1" } }
+   }
+
+   control pot2 Pot {
+      position 39mm, 23.752mm
+      style rogan, 1ps
+      label "CV_2"
+      pin CI2
+      faust { bind { address "/dualkorgvcf/freq2" } }
+   }
+
+   control pot3 Pot {
+      position 10.5mm, 42.8612mm
+      style rogan, 1ps
+      label "CV_3"
+      pin CI3
+      faust { bind { address "/dualkorgvcf/q1" } }
+   }
+
+   control pot4 Pot {
+      position 39mm, 42.8612mm
+      style rogan, 1ps
+      label "CV_4"
+      pin CI4
+      faust { bind { address "/dualkorgvcf/q2" } }
+   }
+
+   //--- Switches ------------------------------------------------------------
+
+   control sw1 Button {
+      position 8mm, 60.0322mm
+      style small, black
+      label "SW 1"
+      pin B1
+   }
+
+   control sw2 Switch {
+      position 24.75mm, 62.7822mm
+      style on_off_on
+      label "SW 2"
+      pins B2,B3
+      faust { bind { address "/dualkorgvcf/SWITCH" }}
+   }
+
+   //--- Gates ---------------------------------------------------------------
+
+   control gate_in1 GateIn {
+      position 6.5mm, 85.3119mm
+      style knurled
+      label "GATE 1"
+      pin GI1
+   }
+
+   control gate_in2 GateIn {
+      position 18.6667mm, 85.3119mm
+      style knurled
+      label "GATE 2"
+      pin GI2
+   }
+
+   control gate_out1 GateOut {
+      position 30.8333mm, 85.3119mm
+      style knurled
+      label "GATE 1"
+      pin GO1
+   }
+
+   control gate_out2 GateOut {
+      position 43mm, 85.3119mm
+      style knurled
+      label "GATE 2"
+      pin GO2
+   }
+
+   //--- CVs -----------------------------------------------------------------
+
+   control cv_in1 CvIn {
+      position 6.5mm, 99.0619mm
+      style knurled
+      label "CV_5"
+      pin P4
+      faust { bind { address "/dualkorgvcf/freq1cv" } }
+   }
+
+   control cv_in2 CvIn {
+      position 18.6667mm, 99.0619mm
+      style knurled
+      label "CV_6"
+      pin P3
+      faust { bind { address "/dualkorgvcf/q1cv" } }
+   }
+
+   control cv_in3 CvIn {
+      position 30.8333mm, 99.0619mm
+      style knurled
+      label "CV_7"
+      pin P1
+      faust { bind { address "/dualkorgvcf/freq2cv" } }
+   }
+
+   control cv_in4 CvIn {
+      position 43mm, 99.0619mm
+      style knurled
+      label "CV_8"
+      pin P2
+      faust { bind { address "/dualkorgvcf/q2cv" } }
+   }
+
+   control cv_out CvOut {
+      position 41.5mm, 60.0322mm
+      style knurled
+      label "CV OUT 1" {
+         positioning bottom
+      }
+      pin CO
+      mode normalized
+   }
+
+   //--- Audio ---------------------------------------------------------------
+
+   control audio_in1 AudioIn {
+      position 6.5mm, 112.65mm
+      style knurled
+      pin AI1
+      label "IN L"
+   }
+
+   control audio_in2 AudioIn {
+      position 18.6667mm, 112.65mm
+      style knurled
+      pin AI2
+      normalling audio_in1
+      label "IN R"
+   }
+
+   control audio_out1 AudioOut {
+      position 30.8333mm, 112.65mm
+      style knurled
+      pin AO1
+      label "OUT L"
+   }
+
+   control audio_out2 AudioOut {
+      position 43mm, 112.65mm
+      style knurled
+      pin AO2
+      label "OUT R"
+   }
+}

@@ -1,0 +1,14 @@
+// dualkorgvcf.erbb
+
+module dualkorgvcf {
+   sources {
+      file "dualkorgvcf.dsp"
+      file "dualkorgvcf.erbui"
+   }
+
+   // Put more resources in this list when you add audio samples
+   resources {
+      // Example of a stereo audio sample for 'soundfile("foo",2)':
+      // data foo AudioSample { file "sample.wav" }
+   }
+}
