@@ -1,0 +1,67 @@
+{
+   "version": 4,
+   "configurations": [
+      {
+         "name": "Simulator",
+         "includePath": [
+            "${workspaceRoot}/.",
+            "${workspaceRoot}/../../eurorack-blocks/include",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/vcv-rack-sdk/include",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/vcv-rack-sdk/dep/include"
+         ],
+         "defines": [
+            "erb_BUFFER_SIZE=48",
+            "erb_SAMPLE_RATE=48014",
+
+            "erb_TARGET_VCV_RACK"
+         ],
+         "intelliSenseMode": "gcc-x64",
+         "browse": {
+            "path": [
+               "${workspaceRoot}"
+            ],
+            "limitSymbolsToIncludedHeaders": true,
+            "databaseFilename": ""
+         },
+         "cStandard": "gnu11",
+         "cppStandard": "gnu++20"
+      },
+      {
+         "name": "Firmware",
+         "includePath": [
+            "${workspaceRoot}/.",
+            "${workspaceRoot}/../../eurorack-blocks/include",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/src",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/src/sys",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/src/usbd",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/src/usbh",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Drivers/CMSIS/Include",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Drivers/CMSIS/DSP/Include",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Middlewares/ST/STM32_USB_Host_Library/Core/Inc",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Middlewares/ST/STM32_USB_Host_Library/MSC/CDC/Inc",
+            "${workspaceRoot}/../../eurorack-blocks/submodules/libDaisy/Middlewares/Third_Party/FatFs/src"
+         ],
+         "defines": [
+            "erb_BUFFER_SIZE=48",
+            "erb_SAMPLE_RATE=48014",
+
+            "erb_TARGET_DAISY"
+         ],
+         "intelliSenseMode": "gcc-x64",
+         "browse": {
+            "path": [
+               "${workspaceRoot}"
+            ],
+            "limitSymbolsToIncludedHeaders": true,
+            "databaseFilename": ""
+         },
+         "cStandard": "gnu11",
+         "cppStandard": "gnu++20"
+      }
+   ]
+}

@@ -1,0 +1,89 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "Launch Firmware Release",
+         "configFiles": [
+            "interface/stlink.cfg",
+            "target/stm32h7x.cfg"
+         ],
+         "cwd": "${workspaceFolder}",
+         "debuggerArgs": [
+            "-d",
+            "${workspaceRoot}"
+         ],
+         "executable": "/Users/nealsanche/github/nosuchmodules/dual_korg_vcf/artifacts/daisy/Release/dualkorgvcf.elf",
+         "interface": "swd",
+         "openOCDLaunchCommands": [
+            "init",
+            "reset init"
+
+         ],
+         "preLaunchTask": "Build and Flash Firmware - Release",
+         "preRestartCommands": [
+            "enable breakpoint",
+            "monitor reset"
+         ],
+         "postLaunchCommands": [
+            "monitor arm semihosting enable"
+         ],
+         "request": "launch",
+         "runToMain": true,
+         "servertype": "openocd",
+         "showDevDebugOutput": true,
+         "svdFile": "/Users/nealsanche/github/eurorack-blocks/build-system/erbb/generators/vscode/svd/STM32H750x.svd",
+         "type": "cortex-debug"
+      },
+      {
+         "name": "Launch Firmware Debug",
+         "configFiles": [
+            "interface/stlink.cfg",
+            "target/stm32h7x.cfg"
+         ],
+         "cwd": "${workspaceFolder}",
+         "debuggerArgs": [
+            "-d",
+            "${workspaceRoot}"
+         ],
+         "executable": "/Users/nealsanche/github/nosuchmodules/dual_korg_vcf/artifacts/daisy/Debug/dualkorgvcf.elf",
+         "interface": "swd",
+         "openOCDLaunchCommands": [
+            "init",
+            "reset init"
+
+         ],
+         "preLaunchTask": "Build and Flash Firmware - Debug",
+         "preRestartCommands": [
+            "enable breakpoint",
+            "monitor reset"
+         ],
+         "postLaunchCommands": [
+            "monitor arm semihosting enable"
+         ],
+         "request": "launch",
+         "runToMain": true,
+         "servertype": "openocd",
+         "showDevDebugOutput": true,
+         "svdFile": "/Users/nealsanche/github/eurorack-blocks/build-system/erbb/generators/vscode/svd/STM32H750x.svd",
+         "type": "cortex-debug"
+      },
+      {
+         "name": "Launch Simulator Debug",
+         "type": "cppdbg",
+         "request": "launch",
+         "args": [],
+         "stopAtEntry": false,
+         "cwd": "${workspaceFolder}",
+         "environment": [],
+         "externalConsole": false,
+         "logging": {
+            "engineLogging": false
+         },
+         "preLaunchTask": "Build Simulator - Debug",
+         "osx": {
+            "MIMode": "lldb",
+            "program": "/Applications/VCV Rack 2 Pro.app/Contents/MacOS/Rack"
+         }
+      }
+   ]
+}
